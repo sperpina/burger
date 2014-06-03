@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+	<title>Test</title>
+	<script type="text/javascript">
+	function hamburger()
+	{
+		document.body.className=(document.body.className=='menuCerrado')?'menuAbierto':'menuCerrado';
+	}
+	</script>
+	<style>
+	#hamburger-icon,
+	nav{position: fixed;top:0;left:0;}
+	nav li,nav ul{list-style: none;padding:0;display:block;float:left;}
+	nav a:hover{background:#333 none;color:#fff;}	
+	/*nav{top:2em}*/
+	@media (min-width:400px)
+	{
+		#hamburger-icon{display:none;}
+		nav,nav ul{width:100%;background:#000 none;color:#fff;}
+		nav li{display:block;float:left;}
+		nav a{padding:.2em 2em;color:#fff;text-decoration:none;}
+	}
+@media (max-width:400px)
+{
+	.menuCerrado nav{display:none;}
+	.menuAbierto nav{display:block;background:#000 none;color:#fff; width :100%;}
+	nav ul,
+	nav li{width:100%;}
+	.menuAbierto nav a{color:#fff;border-bottom:1px dotted #fff;width:100%;text-decoration: none;float:left;display: block;padding:.2em;}
+}
+	</style>
+</head>
+<body class="menuCerrado">
+<div id="page-content">
+  <h3>A Header</h3>
+  <p>A Paragraph</p>
+</div>
+<!-- #page-content -->
+ 
+<div id="hamburger-icon">
+  <a href=# onclick='hamburger()'>Menu.</a>
+</div>
+<!-- #hamburger-icon -->
+ 
+<nav>
+  <!--<a id="home-logo" href="#">
+    Home.
+  </a> -->
+  <!-- a#home-logo -->
+  <ul>
+    <li><a href="#" onclick='hamburger()'>Home</a></li>
+    <li><a href="#" onclick='hamburger()'>Blog</a></li>
+    <li><a href="#" onclick='hamburger()'>About</a></li>
+    <li><a href="#" onclick='hamburger()'>Contact</a></li>
+  </ul>
+</nav>
+</body>
+</html>
